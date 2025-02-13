@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:prayer_times/utls/app_style.dart';
 class TimeNowWidget extends StatelessWidget {
   const TimeNowWidget({
     super.key,
@@ -11,8 +12,9 @@ class TimeNowWidget extends StatelessWidget {
       stream: Stream.periodic(const Duration(hours: 1)),
       builder: (context, snapshot) {
         return Text(
+          textAlign: TextAlign.center,
           "الساعة الآن ${DateFormat('hh:mm:ss a', 'ar').format(DateTime.now())} ",
-          style: const TextStyle(fontSize: 18, color: Colors.white),
+       style: AppStyle.textStyle18NotoKufia,
         );
       },
     );

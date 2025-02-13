@@ -3,6 +3,7 @@ import 'package:jhijri/_src/_jHijri.dart';
 import 'package:jhijri/jHijri.dart';
 import 'package:flutter/material.dart';
 import 'package:prayer_times/utls/app_style.dart';
+import 'package:prayer_times/widget/c_dropdown_button_form_field_widget.dart';
 import 'package:prayer_times/widget/time_now_widget.dart';
 import 'package:prayer_times/widget/today_name_and_date_widget.dart';
 
@@ -41,11 +42,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          CDropdownButtonFormFieldWidget(
+              value: selectedCountry, list: ["مصر", "السعودية", "الإمارات"]),
           const SizedBox(height: 10),
-          CDropdownButtonFormFieldWidget(value: selectedCountry, list: ["مصر", "السعودية", "الإمارات"]),
-          const SizedBox(height: 20),
-          CDropdownButtonFormFieldWidget(value: selectedCity, list: ["القاهرة", "الإسكندرية", "الرياض", "دبي"]),
-          const SizedBox(height: 20),
+          CDropdownButtonFormFieldWidget(
+              value: selectedCity,
+              list: ["القاهرة", "الإسكندرية", "الرياض", "دبي"]),
+          const SizedBox(height: 10),
           Text(
             "$selectedCountry - $selectedCity",
             style: AppStyle.textStyle20NotoKufia,
@@ -53,16 +56,16 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           const SizedBox(height: 15),
           TodayNameAndDateWidget(),
           const SizedBox(height: 10),
-          const SizedBox(height: 20),
           // عرض الوقت الحالي
           TimeNowWidget(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           // العداد التنازلي
-          const Text(
-            "باقي على الظهر",
-            style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
+          Align(
+              alignment: Alignment.center,
+              child: Text(
+                "باقي على الظهر",
+                style: AppStyle.textStyle18NotoKufia,
+              )),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +79,9 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
               _timeBox(timeLeft.inHours.toString().padLeft(2, '0')),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
+
+          Expanded(child: PrayerTableWidget())
         ],
       ),
     );
@@ -92,48 +97,89 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       child: Text(
         value,
         style: const TextStyle(
-            fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }
 }
 
+class PrayerTableWidget extends StatelessWidget {
+  final List<Map<String, String>> prayerTimes = [
+    {"name": "صلاة الفجر", "time": "05:10 ص"},
+    {"name": "الشروق", "time": "06:37 ص"},
+    {"name": "صلاة الظهر", "time": "12:09 م"},
+    {"name": "صلاة العصر", "time": "03:17 م"},
+    {"name": "صلاة المغرب", "time": "05:42 م"},
+    {"name": "صلاة العشاء", "time": "06:59 م"},
+  ];
 
-
-class CDropdownButtonFormFieldWidget extends StatelessWidget {
-  final   String value ;
-  final   List<String> list ;
-  const CDropdownButtonFormFieldWidget({super.key, required this.value, required this.list});
+  PrayerTableWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return      DropdownButtonFormField<String>(
-      value: value,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Colors.white,
-        border:
-        OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3, // ثلاث أعمدة
+        childAspectRatio: 1 / .6,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
       ),
-      items: list.map((String country) {
-        return DropdownMenuItem<String>(
-          value: country,
-          child: Text(country),
+      itemCount: prayerTimes.length,
+      itemBuilder: (context, index) {
+        return PrayerTile(
+          name: prayerTimes[index]["name"]!,
+          time: prayerTimes[index]["time"]!,
         );
-      }).toList(),
-      onChanged: (value) {
-        // setState(() => selectedCountry = value!);
       },
     );
-
   }
 }
 
+class PrayerTile extends StatelessWidget {
+  final String name;
+  final String time;
 
+  const PrayerTile({super.key, required this.name, required this.time});
 
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.9),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(.75),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+              ),
+            ),
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: 30,
+            child: Text(
+              name,
+              style: AppStyle.textStyle18NotoKufia
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            time,
+            style: AppStyle.textStyle18NotoKufia.copyWith(
+                fontSize: 14,
+                color: Colors.black87,
+                fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 // زر التفعيل
 // Row(
