@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:prayer_times/screen/prayer_times_screen.dart';
+import 'package:prayer_times/feature/presentation/screen/prayer_times_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 

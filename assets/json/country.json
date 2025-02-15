@@ -1,0 +1,34 @@
+{
+  "countries": [
+    {
+      "name_country_en": "Egypt",
+      "name_country_ar": "مصر",
+      "name_city": [
+        { "name_en": "Cairo", "name_ar": "القاهرة", "lat": "30.033333", "lon": "31.233334" },
+        { "name_en": "Alexandria", "name_ar": "الإسكندرية", "lat": "31.200092", "lon": "29.918739" },
+        { "name_en": "Minya", "name_ar": "المنيا", "lat": "28.0908", "lon": "30.7480" },
+        { "name_en": "Asyut", "name_ar": "أسيوط", "lat": "27.1809", "lon": "31.1837" },
+        { "name_en": "Suez", "name_ar": "السويس", "lat": "29.9668", "lon": "32.5498" },
+        { "name_en": "Port Said", "name_ar": "بورسعيد", "lat": "31.2565", "lon": "32.2841" },
+        { "name_en": "Ismailia", "name_ar": "الإسماعيلية", "lat": "30.6043", "lon": "32.2723" },
+        { "name_en": "Faiyum", "name_ar": "الفيوم", "lat": "29.3084", "lon": "30.8428" },
+        { "name_en": "Beni Suef", "name_ar": "بني سويف", "lat": "29.0661", "lon": "31.0994" },
+        { "name_en": "Luxor", "name_ar": "الأقصر", "lat": "25.6872", "lon": "32.6396" },
+        { "name_en": "Aswan", "name_ar": "أسوان", "lat": "24.0889", "lon": "32.8998" },
+        { "name_en": "Hurghada", "name_ar": "الغردقة", "lat": "27.2579", "lon": "33.8116" },
+        { "name_en": "Sharm El-Sheikh", "name_ar": "شرم الشيخ", "lat": "27.9158", "lon": "34.3298" },
+        { "name_en": "Damietta", "name_ar": "دمياط", "lat": "31.4165", "lon": "31.8133" },
+        { "name_en": "Qena", "name_ar": "قنا", "lat": "26.1642", "lon": "32.7267" },
+        { "name_en": "Sohag", "name_ar": "سوهاج", "lat": "26.5569", "lon": "31.6948" },
+        { "name_en": "Kafr El Sheikh", "name_ar": "كفر الشيخ", "lat": "31.1060", "lon": "30.9497" },
+        { "name_en": "Beheira", "name_ar": "البحيرة", "lat": "30.5972", "lon": "30.9876" },
+        { "name_en": "Dakahliya", "name_ar": "الدقهلية", "lat": "31.0594", "lon": "31.3807" },
+        { "name_en": "Sharqia", "name_ar": "الشرقية", "lat": "30.7326", "lon": "31.7195" },
+        { "name_en": "Gharbia", "name_ar": "الغربية", "lat": "30.8754", "lon": "31.0335" },
+        { "name_en": "Matruh", "name_ar": "مطروح", "lat": "31.3525", "lon": "27.2373" },
+        { "name_en": "New Valley", "name_ar": "الوادي الجديد", "lat": "25.4711", "lon": "29.0312" },
+        { "name_en": "Red Sea", "name_ar": "البحر الأحمر", "lat": "26.7558", "lon": "33.9433" }
+      ]
+    }
+  ]
+}

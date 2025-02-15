@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:prayer_times/utls/app_style.dart';
+import 'package:prayer_times/core/utls/app_style.dart';
 class TimeNowWidget extends StatelessWidget {
   const TimeNowWidget({
     super.key,

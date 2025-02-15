@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prayer_times/utls/app_style.dart';
+import 'package:prayer_times/core/utls/app_style.dart';
+import 'package:prayer_times/feature/presentation/widget/prayer_table_widget.dart';
 class PrayerTileWidget extends StatelessWidget {
-  final String name;
-  final String time;
+final  UIPrayerTimeModel uIPrayerTimeModel ;
 
-  const PrayerTileWidget({super.key, required this.name, required this.time});
+  const PrayerTileWidget({super.key,required this.uIPrayerTimeModel});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +27,14 @@ class PrayerTileWidget extends StatelessWidget {
             width: double.infinity,
             height: 30,
             child: Text(
-              name,
+              uIPrayerTimeModel.name,
               style: AppStyle.textStyle18NotoKufia
                   .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
             ),
           ),
           SizedBox(height: 10),
           Text(
-            time,
+            uIPrayerTimeModel. time,
             style: AppStyle.textStyle18NotoKufia.copyWith(
                 fontSize: 14,
                 color: Colors.black87,

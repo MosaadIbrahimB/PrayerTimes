@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:jhijri/_src/_jHijri.dart';
-import 'package:prayer_times/utls/app_style.dart';
+import 'package:prayer_times/core/utls/app_style.dart';
 
 class TodayNameAndDateWidget extends StatelessWidget {
   final String todayNameDay = DateFormat('EEEE', 'ar').format(DateTime.now());

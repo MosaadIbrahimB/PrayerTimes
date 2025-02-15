@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prayer_times/widget/time_box_widget.dart';
+import 'package:prayer_times/feature/presentation/widget/time_box_widget.dart';
 class TimeLeftWidget extends StatelessWidget {
   const TimeLeftWidget({
     super.key,
