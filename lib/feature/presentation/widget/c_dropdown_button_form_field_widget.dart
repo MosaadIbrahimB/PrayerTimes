@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:prayer_times/core/utls/app_style.dart';
 
-class CDropdownButtonFormFieldWidget extends StatelessWidget {
+class CDropdownButtonFormFieldWidget extends StatefulWidget {
   final String value;
-
   final List<String> list;
+
 
   const CDropdownButtonFormFieldWidget(
       {super.key, required this.value, required this.list});
 
+  @override
+  State<CDropdownButtonFormFieldWidget> createState() => _CDropdownButtonFormFieldWidgetState();
+}
+
+class _CDropdownButtonFormFieldWidgetState extends State<CDropdownButtonFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
@@ -18,13 +23,13 @@ class CDropdownButtonFormFieldWidget extends StatelessWidget {
         size: 30,
         color: Colors.white,
       ),
-      value: value,
+      value: widget.value,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white.withOpacity(0.3),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       ),
-      items: list.map((String country) {
+      items: widget.list.map((String country) {
         return DropdownMenuItem<String>(
           value: country,
           child: Text(
@@ -34,7 +39,7 @@ class CDropdownButtonFormFieldWidget extends StatelessWidget {
         );
       }).toList(),
       onChanged: (value) {
-        // setState(() => selectedCountry = value!);
+    print(value);
       },
       dropdownColor: Color(0xdd733487),
       borderRadius: BorderRadius.circular(8),

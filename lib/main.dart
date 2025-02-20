@@ -7,6 +7,8 @@ import 'package:prayer_times/feature/presentation/control/athan_cubit.dart';
 import 'package:prayer_times/feature/presentation/screen/home_screen.dart';
 import 'package:prayer_times/core/utls/api_service.dart';
 
+import 'a.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting('ar');
@@ -27,10 +29,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => AthanCube()..getAthan(),
-        child: HomeScreen(),
-      ),
+     home: A(),
+      // home: BlocProvider(
+      //   create: (context) => AthanCube()..getAthan(),
+      //   child: HomeScreen(),
+      // ),
     );
   }
 }

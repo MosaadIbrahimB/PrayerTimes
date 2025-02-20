@@ -1,11 +1,3 @@
-// class DateApiModel {
-//   final Country ?country;
-//   final String? date;
-//
-//   DateApiModel(this.country, this.date);
-//
-//
-// }
 
 class Country {
   final String nameEn;
@@ -26,12 +18,12 @@ class Country {
 }
 
 class City {
-  final String nameEn;
-  final String nameAr;
-  final double lat;
-  final double lon;
+  final String ?nameEn;
+  final String ?nameAr;
+  final double ?lat;
+  final double ?lon;
 
-  City({required this.nameEn, required this.nameAr, required this.lat, required this.lon});
+  City({ this.nameEn,  this.nameAr,  this.lat,  this.lon});
 
   factory City.fromJson(Map<String, dynamic> json) {
     return City(

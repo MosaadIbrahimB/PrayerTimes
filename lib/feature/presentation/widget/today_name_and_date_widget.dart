@@ -4,14 +4,12 @@ import 'package:jhijri/_src/_jHijri.dart';
 import 'package:prayer_times/core/utls/app_style.dart';
 
 class TodayNameAndDateWidget extends StatelessWidget {
-  final String todayNameDay = DateFormat('EEEE', 'ar').format(DateTime.now());
-  final String todayDate =
-      DateFormat(' d MMMM yyyy', 'ar').format(DateTime.now());
-  final String jHijri =
-      "${JHijri.now().day} ${JHijri.now().monthName} ${JHijri.now().year} هـ";
+  final String todayNameDay ;// DateFormat('EEEE', 'ar').format(DateTime.now());
+  final String todayDate ;//=      DateFormat(' d MMMM yyyy', 'ar').format(DateTime.now());
+  final String jHijri ;//=      "${JHijri.now().day} ${JHijri.now().monthName} ${JHijri.now().year} هـ";
 
-  TodayNameAndDateWidget({
-    super.key,
+  const TodayNameAndDateWidget({
+    super.key, required this.todayNameDay, required this.todayDate, required this.jHijri,
   });
 
   @override
@@ -24,7 +22,7 @@ class TodayNameAndDateWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(todayDate, style: AppStyle.textStyle18NotoKufia),
+            Text(todayDate, style: AppStyle.textStyle18NotoKufia,),
             Text(jHijri, style: AppStyle.textStyle18NotoKufia),
           ],
         ),

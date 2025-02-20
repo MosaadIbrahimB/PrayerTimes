@@ -19,7 +19,10 @@ class ApiService {
 
 
  Future<Map<String,dynamic>>  getByCountryAndCity(String country,String city) async {
-  String url=  "https://api.aladhan.com/v1/timingsByCity?country=EG&city=cairo";
+  String url=  "https://api.aladhan.com/v1/timingsByCity/18-02-2025?country=EG&city=cairo&method=8&tune=0,1,4,5,2,3,4,5,-3";
+  // Imsak,Fajr,Sunrise,Dhuhr,Asr,Maghrib,Sunset,Isha,Midnight
+  // https://api.aladhan.com/timingsByAddress/09-03-2015?address=Dubai,UAE&method=8&tune=2,3,4,5,2,3,4,5,-3
+  // https://api.aladhan.com/v1/timingsByCity/18-02-2025?country=EG&city=cairo&method=8&tune=0,1,4,5,2,3,4,5,-3
   var response = await _dio.get(url);
   return response.data;
   }

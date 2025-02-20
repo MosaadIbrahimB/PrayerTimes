@@ -16,3 +16,7 @@ class ErrorAthanState extends AthanState{
   final String message;
   ErrorAthanState({required this.message});
 }
+class SelectCountryState extends AthanState{
+
+  SelectCountryState();
+}

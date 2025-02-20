@@ -7,7 +7,7 @@ class ParamsModel extends Equatable {
     });
 
     final num? fajr;
-    final num? isha;
+    final String? isha;
 
     factory ParamsModel.fromJson(Map<String, dynamic> json){
         return ParamsModel(
