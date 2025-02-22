@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-import 'package:prayer_times/feature/presentation/control/athan_cubit.dart';
-import 'package:prayer_times/feature/presentation/screen/home_screen.dart';
 import 'package:prayer_times/core/utls/api_service.dart';
 
 import 'a.dart';
+import 'feature/adan_feature/presentation/screen/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     home: A(),
+     home: HomeScreen()
       // home: BlocProvider(
       //   create: (context) => AthanCube()..getAthan(),
       //   child: HomeScreen(),
@@ -38,3 +37,51 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/*
+Scaffold(
+       appBar: AppBar(),
+       body: Center(
+         child: SizedBox(
+           width: MediaQuery.of(context).size.width*.98,
+           child: Column(
+             children: [
+               Row(
+                 children: [
+                   Expanded(
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.stretch,
+                       children: [
+                         Container(
+                           color: Colors.black,
+                           child: Text("صلاة الفجر",style: TextStyle(color: Colors.white),),
+                         ),
+                         Container(
+                           color: Colors.red,
+                           child: Text("2:20 pm"),
+                         ),
+                       ],
+                     ),
+                   ),
+                   Expanded(
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.stretch,
+                       children: [
+                         Container(
+                           color: Colors.black,
+                           child: Text("صلاة الفجر",style: TextStyle(color: Colors.white),),
+                         ),
+                         Container(
+                           color: Colors.red,
+                           child: Text("2:20 pm"),
+                         ),
+                       ],
+                     ),
+                   ),
+                 ],
+               )
+             ],
+           ),
+         ),
+       ),
+     ),
+ */
