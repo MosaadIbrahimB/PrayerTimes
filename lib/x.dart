@@ -278,7 +278,7 @@
 // // setState(
 // //       () {
 // //     timePrayer = TimingModel.fromJson(response["data"]["timings"]);
-// //     getNextPrayerTime(timePrayer);
+//     getNextPrayerTime(timePrayer);
 // //     timePrayer = getTime(timePrayer);
 // //     DateDayModel dateDay =
 // //     DateDayModel.fromJson(response["data"]["date"]);
