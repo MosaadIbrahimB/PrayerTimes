@@ -14,21 +14,21 @@ class TimeHijriWidget extends StatelessWidget {
       children: [
         Text(
           hijriModel.numberDay ?? '',
-          style: AppStyle.textStyle18NotoKufia,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         SizedBox(
           width: 10,
         ),
         Text(
           hijriModel.month ?? "",
-          style: AppStyle.textStyle18NotoKufia,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         SizedBox(
           width: 10,
         ),
         Text(
           hijriModel.year ?? "",
-          style: AppStyle.textStyle18NotoKufia,
+          style: Theme.of(context).textTheme.bodyMedium!,
         ),
       ],
     );

@@ -17,13 +17,13 @@ class TodayNameAndDateWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("اليوم: $todayNameDay", style: AppStyle.textStyle18NotoKufia),
+        Text("اليوم: $todayNameDay", style: Theme.of(context).textTheme.bodyMedium!),
         const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(todayDate, style: AppStyle.textStyle18NotoKufia,),
-            Text(jHijri, style: AppStyle.textStyle18NotoKufia),
+            Text(todayDate, style: Theme.of(context).textTheme.bodyMedium!,),
+            Text(jHijri, style: Theme.of(context).textTheme.bodyMedium!),
           ],
         ),
       ],

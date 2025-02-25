@@ -1,11 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:prayer_times/feature/adan_feature/presentation/widget/country_and_city_widget.dart';
 import 'package:prayer_times/feature/adan_feature/presentation/widget/prayer_body_widget.dart';
 import 'package:prayer_times/feature/adan_feature/presentation/widget/time_now_widget.dart';
-
-import '../../../../core/utls/app_style.dart';
 import 'hijri_body_widget.dart';
 import 'next_prayer_widget.dart';
 
@@ -22,7 +19,6 @@ class BodyHomeWidget extends StatelessWidget {
         SizedBox(height: 10.h),
         HijriBodyWidget(),
         const SizedBox(height: 10),
-
         NextPrayerWidget(),
         SizedBox(height: 10.h),
         PrayerBodyWidget(),

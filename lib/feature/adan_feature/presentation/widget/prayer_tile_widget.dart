@@ -22,7 +22,7 @@ class PrayerTileWidget extends StatelessWidget {
           height: 30,
           child: Text(
             uIPrayerTimeModel.name,
-            style: AppStyle.textStyle18NotoKufia.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: Colors.white, fontWeight: FontWeight.w500, fontSize: 11),
           ),
         ),
@@ -36,7 +36,7 @@ class PrayerTileWidget extends StatelessWidget {
           // width: MediaQuery.of(context).size.width * .15,
           child: Text(
             uIPrayerTimeModel.time,
-            style: AppStyle.textStyle18NotoKufia.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 fontSize: 12,
                 color: Colors.black87,
                 fontWeight: FontWeight.bold),

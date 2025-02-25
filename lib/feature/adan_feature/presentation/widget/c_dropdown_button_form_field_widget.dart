@@ -34,7 +34,7 @@ class _CDropdownButtonFormFieldWidgetState extends State<CDropdownButtonFormFiel
           value: country,
           child: Text(
             country,
-            style: AppStyle.textStyle18NotoKufia.copyWith(color: Colors.white),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white),
           ),
         );
       }).toList(),

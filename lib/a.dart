@@ -5,13 +5,10 @@
 // import 'package:intl/intl.dart';
 // import 'package:prayer_times/x.dart';
 //
+// import 'feature/adan_feature/domain/model/country_model.dart';
+// import 'feature/adan_feature/domain/model/date_day_model.dart';
 // import 'feature/adan_feature/domain/model/timing_modle.dart';
-// import 'feature/athan/domain/model/city_model.dart';
-// import 'feature/athan/domain/model/country_model.dart';
-// import 'feature/athan/domain/model/date_day_model.dart';
-// import 'feature/athan/domain/model/timing_modle.dart';
 // import 'feature/adan_feature/presentation/widget/time_en_widget.dart';
-// import 'feature/adan_feature/presentation/widget/time_hijri_widget.dart';
 //
 // class A extends StatefulWidget {
 //   const A({super.key});

@@ -53,7 +53,7 @@ class PrayerBodyWidget extends StatelessWidget {
       return Container(
         child: Text(
           "يتم تحميل مواعيد الصلاة ... ",
-          style: AppStyle.textStyle18NotoKufia,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       );
     });

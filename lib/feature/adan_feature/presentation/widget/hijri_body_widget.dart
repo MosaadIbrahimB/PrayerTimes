@@ -14,7 +14,6 @@ class HijriBodyWidget extends StatelessWidget {
           return TimeHijriWidget(hijriModel: state.hijriModel);
         }
         return Container(
-          color: Colors.red,
           height: 50,
         );
       },

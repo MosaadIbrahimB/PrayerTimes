@@ -28,7 +28,7 @@ class PrayerItemWidget extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   name,
-                  style: AppStyle.textStyle14NotoKufia,
+                  style: Theme.of(context).textTheme.bodySmall!,
                 )),
             Container(
 // height: 70.h,
@@ -37,11 +37,11 @@ class PrayerItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     timingModel.substring(0, 5),
-                    style: AppStyle.textStyle18NotoKufia
+                    style: Theme.of(context).textTheme.bodyMedium!
                         .copyWith(color: Colors.black87),
                   ),
                   Text(timingModel.substring(5),
-                      style: AppStyle.textStyle18NotoKufia
+                      style: Theme.of(context).textTheme.bodyMedium!
                           .copyWith(color: Colors.black87)),
                 ],
               ),

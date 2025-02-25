@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 class TimeCubit extends Cubit<String> {
   late Timer _timer;
 
+  // TimeCubit():super("saaaa");
+
   TimeCubit() : super(_getCurrentTime()) {
     _startTimer();
   }

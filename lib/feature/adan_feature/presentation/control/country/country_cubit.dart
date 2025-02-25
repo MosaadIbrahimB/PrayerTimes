@@ -16,9 +16,25 @@ class CountryCubit extends Cubit<CountryState> {
   String _cityAr = 'القاهرة'; // القيمة الافتراضية للقائمة الثانية
   List<CountryModel> countriesList = AViewModel.countriesList;
 
-  CountryCubit() : super(CountryInitialState());
+  CountryCubit() : super(CountryInitialState()){
+    setSelectCountry(country:  _selectedValue1);
+    setCity(cityAr: _cityAr);
+    getResponse();
+  }
 
   static CountryCubit get(BuildContext context) => BlocProvider.of(context);
+
+  Future<Map<String, dynamic>> getResponse() async {
+    String longitude = getLongitude();
+    String latitude = getLatitude();
+    var response =await AppApiService.getData(longitude: longitude, latitude: latitude);
+    return response;
+
+  }
+  setSelectCountry({required String country}) {
+    _selectedValue1 = country;
+    emit(CountryUpdateState());
+  }
 
   List<String> getCountriesListAr() {
     return countriesList.map(
@@ -32,10 +48,7 @@ class CountryCubit extends Cubit<CountryState> {
     return _selectedValue1;
   }
 
-  setSelectCountry({required String country}) {
-    _selectedValue1 = country;
-    emit(CountryUpdateState());
-  }
+
 
   String getFirstCity() {
     List<String> city = cityListAr();
@@ -80,13 +93,7 @@ class CountryCubit extends Cubit<CountryState> {
     return "";
   }
 
-  Future<Map<String, dynamic>> getResponse() async {
-    String longitude = getLongitude();
-    String latitude = getLatitude();
-    var response =
-    await AppApiService.getData(longitude: longitude, latitude: latitude);
-    return response;
-  }
+
 
   Future<TimingModel> getTimePrayer() async {
     var response = await getResponse();

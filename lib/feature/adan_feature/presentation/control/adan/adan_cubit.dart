@@ -20,10 +20,14 @@ setNextPrayer(String nextPrayer){
   _nextPrayer=nextPrayer;
 }
 String getNextPrayer()=>_nextPrayer;
+
   setRemainingTimePrayer(String remainingTimePrayer){
     _remainingTimePrayer=remainingTimePrayer;
   }
+
   String getRemainingTimePrayer()=>_remainingTimePrayer;
+
+
   getTimePrayer() async {
     TimingModel timingModel = await countryCubit.getTimePrayer();
     timingModel = getTime(timingModel);

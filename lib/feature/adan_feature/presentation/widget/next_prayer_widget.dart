@@ -24,7 +24,7 @@ class NextPrayerWidget extends StatelessWidget {
                     color: Colors.white12,
                     child: Text(
                       "باقى على : ${state.nextPrayerModel.nextPrayer}",
-                      style: AppStyle.textStyle18NotoKufia,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     )),
                 SizedBox(height: 10.h),
                 Container(
@@ -32,7 +32,7 @@ class NextPrayerWidget extends StatelessWidget {
                     color: Colors.white12,
                     child: Text(
                       state.nextPrayerModel.remainingTimePrayer,
-                      style: AppStyle.textStyle18NotoKufia,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     )),
               ],
             ),
@@ -41,7 +41,9 @@ class NextPrayerWidget extends StatelessWidget {
         if(state is NextPrayerLoadingState){
           return Center(child: SizedBox(height:105.h,child: CircularProgressIndicator()),);
         }
-        return Center(child: SizedBox(height:105.h,child: Text("الصلاة القادمة")),);
+        return Center(child: SizedBox(height:105.h,child: Text("الصلاة القادمة"
+         , style: Theme.of(context).textTheme.bodyMedium,
+        )),);
       },
     );
   }
